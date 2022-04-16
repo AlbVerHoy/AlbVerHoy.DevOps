@@ -1,4 +1,4 @@
-name: CI
+name: DeployCosmosDBAccount
 
 on:
   workflow_dispatch:
@@ -15,5 +15,5 @@ jobs:
     - uses: azure/arm-deploy@v1
       with:
         resourceGroupName: blog-api
-        template: resources/templates/template.json
-        parameters: resources/parameters/parameters.json
+        template: resources/CosmosDB/template.json
+        parameters: resources/CosmosDB/parameters.json
