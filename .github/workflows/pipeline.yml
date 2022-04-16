@@ -24,6 +24,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - uses: azure/arm-deploy@v1
       with:
-        resourceGroupName: github-action-arm-rg
+        resourceGroupName: blog-api
         template: resources/templates/template.json
         parameters: resources/parameters/parameters.json
