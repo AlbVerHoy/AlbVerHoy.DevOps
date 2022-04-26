@@ -1,7 +1,15 @@
-name: DeployCosmosDBAccount
+name: DeployAzureResources
 
 on:
   workflow_dispatch:
+    inputs:
+      resourceName:
+        type: choice
+        description: 'Resource Name'
+        options:
+        - CosmosDB
+        - Container Registries
+        - baz
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -15,5 +23,5 @@ jobs:
     - uses: azure/arm-deploy@v1
       with:
         resourceGroupName: blog-api
-        template: resources/CosmosDB/template.json
-        parameters: resources/CosmosDB/parameters.json
+        template: resources/${{ github.event.inputs.resourceName }}/template.json
+        parameters: resources/${{ github.event.inputs.resourceName }}/parameters.json
