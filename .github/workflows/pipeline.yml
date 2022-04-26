@@ -7,9 +7,9 @@ on:
         type: choice
         description: 'Resource Name'
         options:
-        - CosmosDB
-        - Container Registries
-        - App Service
+        - 'CosmosDB'
+        - 'Container Registries'
+        - 'App Service'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,5 +23,5 @@ jobs:
     - uses: azure/arm-deploy@v1
       with:
         resourceGroupName: blog-api
-        template: resources/${{ github.event.inputs.resourceName }}/template.json
-        parameters: resources/${{ github.event.inputs.resourceName }}/parameters.json
+        template: 'resources/${{ github.event.inputs.resourceName }}/template.json'
+        parameters: 'resources/${{ github.event.inputs.resourceName }}/parameters.json'
