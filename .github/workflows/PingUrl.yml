@@ -1,0 +1,13 @@
+name: Ping Azure Web App
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Ping URL (JavaScript action)
+        uses: soul-wish/ping-url-javascript-action@v1.2
+        with:
+          url: https://consulta-celda.azurewebsites.net
